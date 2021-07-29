@@ -17,6 +17,9 @@ public class ServerConnectionController : MonoBehaviour
     private readonly string m_lightSecretKeyHash = "light".GetHashCode().ToString();
     private readonly string m_explosionSecretKeyHash = "explode".GetHashCode().ToString();
 
+    private const string m_localIP = "127.0.0.1";
+    private const int m_testPort = 9898;
+
     private void Start()
     {
         m_tcpThreadListener = new Thread(new ThreadStart(ListenClientRequests))
@@ -30,7 +33,7 @@ public class ServerConnectionController : MonoBehaviour
     {
         try
         {
-            m_tcpListener = new TcpListener(IPAddress.Parse("127.0.0.1"), 9898);
+            m_tcpListener = new TcpListener(IPAddress.Parse(m_localIP), m_testPort);
             m_tcpListener.Start();
 
             byte[] bytes = new byte[1024];

@@ -1,8 +1,6 @@
-﻿using UnityEngine;
-
-public class ClientMessageProvider : MonoBehaviour
+﻿public class ClientMessageProvider
 {
-    public string GetMessageSecretCode(string key)
+    public static string GetMessageSecretCode(string key)
     {
         return key.GetHashCode().ToString();
     }

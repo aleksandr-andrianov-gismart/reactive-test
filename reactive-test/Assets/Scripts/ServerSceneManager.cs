@@ -20,7 +20,7 @@ public class ServerSceneManager : MonoBehaviour
             if (m_lightIndexRx.Value >= m_pointLights.Count) m_lightIndexRx.Value = 0;
 
             SwitchLight();
-        });
+        }).AddTo(this);
     }
 
     public void SwitchLight()

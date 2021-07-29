@@ -61,6 +61,7 @@ public class ClientConnectionController : MonoBehaviour
     public void SendMessageToServer(string command)
     {
         if (m_socketConnection == null) return;
+
         try
         {
             NetworkStream stream = m_socketConnection.GetStream();
